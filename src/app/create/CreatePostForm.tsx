@@ -40,7 +40,7 @@ export default function CreatePostForm() {
         throw new Error(error.error || 'Erro ao criar post');
       }
     } catch (error) {
-      alert(error instanceof Error ? error.message : 'Erro ao criar artigo. Tente novamente.');
+      alert(error instanceof Error ? error.message : 'Erro ao compartilhar experiência. Tente novamente.');
       setIsSubmitting(false);
     }
   };
@@ -52,27 +52,27 @@ export default function CreatePostForm() {
           href="/"
           className="text-blue-600 hover:text-blue-800 mb-4 inline-block"
         >
-          ← Voltar para início
+          ← Voltar para comunidade
         </Link>
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          Criar Novo Artigo
+          Compartilhar Experiência
         </h1>
         <p className="text-gray-600">
-          Compartilhe seus conhecimentos sobre mercado financeiro
+          Conte sua história, compartilhe aprendizados e ajude outros investidores brasileiros
         </p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-2">
-            Título *
+            Título da sua experiência *
           </label>
           <input
             type="text"
             id="title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="Ex: Como diversificar sua carteira de investimentos"
+            placeholder="Ex: Como perdi R$ 10.000 e o que aprendi com isso"
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             required
           />
@@ -80,16 +80,26 @@ export default function CreatePostForm() {
 
         <div>
           <label htmlFor="content" className="block text-sm font-medium text-gray-700 mb-2">
-            Conteúdo
+            Conte sua experiência
           </label>
           <textarea
             id="content"
             value={content}
             onChange={(e) => setContent(e.target.value)}
-            placeholder="Escreva seu artigo aqui..."
+            placeholder="Conte sua história: o que aconteceu, quais foram os aprendizados, dicas para outros investidores..."
             rows={10}
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
+        </div>
+
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 className="font-medium text-blue-900 mb-2">💡 Dicas para uma boa experiência:</h3>
+          <ul className="text-sm text-blue-800 space-y-1">
+            <li>• Seja honesto sobre seus erros e acertos</li>
+            <li>• Compartilhe números e dados quando possível</li>
+            <li>• Explique o contexto da situação</li>
+            <li>• Ofereça dicas práticas para outros investidores</li>
+          </ul>
         </div>
 
         <div className="flex gap-4">
@@ -98,7 +108,7 @@ export default function CreatePostForm() {
             disabled={isSubmitting}
             className="bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white px-6 py-2 rounded-md font-medium"
           >
-            {isSubmitting ? 'Criando...' : 'Criar Artigo'}
+            {isSubmitting ? 'Compartilhando...' : 'Compartilhar Experiência'}
           </button>
           
           <Link

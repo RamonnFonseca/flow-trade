@@ -21,10 +21,10 @@ export default async function Home() {
       <div className="flex justify-between items-center mb-8">
         <div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Artigos sobre Mercado Financeiro
+            A comunidade do mercado financeiro brasileiro
           </h1>
           <p className="text-gray-600">
-            Compartilhe conhecimento, histórias e insights sobre investimentos
+            Compartilhe experiências, conecte-se com investidores e aprenda com quem já viveu na prática
           </p>
         </div>
         {session?.user ? (
@@ -32,14 +32,14 @@ export default async function Home() {
             href="/create"
             className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-medium"
           >
-            Criar Artigo
+            Compartilhar Experiência
           </Link>
         ) : (
           <Link
             href="/auth/signin"
             className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-medium"
           >
-            Entrar para Criar
+            Entrar na Comunidade
           </Link>
         )}
       </div>
@@ -47,24 +47,24 @@ export default async function Home() {
       {posts.length === 0 ? (
         <div className="text-center py-12">
           <h2 className="text-xl font-semibold text-gray-900 mb-2">
-            Nenhum artigo ainda
+            Seja o primeiro da comunidade!
           </h2>
           <p className="text-gray-600 mb-4">
-            Seja o primeiro a compartilhar um artigo sobre mercado financeiro!
+            Compartilhe sua experiência no mercado financeiro e ajude outros investidores brasileiros
           </p>
           {session?.user ? (
             <Link
               href="/create"
               className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-medium"
             >
-              Criar Primeiro Artigo
+              Compartilhar Primeira Experiência
             </Link>
           ) : (
             <Link
               href="/auth/signin"
               className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-medium"
             >
-              Entrar para Criar
+              Entrar na Comunidade
             </Link>
           )}
         </div>

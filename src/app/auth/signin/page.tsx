@@ -57,10 +57,10 @@ export default function SignIn() {
       <div className="max-w-md w-full space-y-8">
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Entre na sua conta
+            Entre na comunidade
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            Para compartilhar e ler artigos sobre mercado financeiro
+            Conecte-se com outros investidores e compartilhe experiências do mercado financeiro brasileiro
           </p>
         </div>
         

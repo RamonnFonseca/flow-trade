@@ -13,10 +13,10 @@ const Header = async () => {
           </Link>
           <nav className="ml-10">
             <Link href="/" className="mr-4 hover:text-gray-300">
-              Artigos
+              Comunidade
             </Link>
             <Link href="/create" className="hover:text-gray-300">
-              Criar
+              Compartilhar
             </Link>
           </nav>
         </div>

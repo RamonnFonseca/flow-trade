@@ -71,12 +71,12 @@ export default function RegisterPage() {
       <div className="max-w-md w-full space-y-8">
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Criar nova conta
+            Junte-se à comunidade
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
             Ou{' '}
             <Link href="/auth/signin" className="font-medium text-indigo-600 hover:text-indigo-500">
-              faça login em sua conta existente
+              faça login se já faz parte da comunidade
             </Link>
           </p>
         </div>

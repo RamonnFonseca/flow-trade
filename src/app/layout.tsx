@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FlowTrade",
-  description: "Sua plataforma de artigos e networking sobre o mercado financeiro.",
+  title: "FlowTrade - A comunidade do mercado financeiro brasileiro",
+  description: "Conecte-se com investidores, compartilhe experiências e aprenda com quem já viveu na prática do mercado financeiro brasileiro.",
 };
 
 export default function RootLayout({
