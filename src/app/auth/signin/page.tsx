@@ -118,6 +118,15 @@ export default function SignIn() {
             >
               {loading ? 'Entrando...' : 'Entrar'}
             </button>
+
+            <div className="text-center">
+              <Link
+                href="/auth/forgot-password"
+                className="text-sm text-indigo-600 hover:text-indigo-500"
+              >
+                Esqueci minha senha
+              </Link>
+            </div>
           </form>
 
           {/* Divisor */}
