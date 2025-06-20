@@ -48,7 +48,11 @@ export default function RegisterPage() {
       const data = await response.json()
 
       if (response.ok) {
-        router.push('/auth/signin?message=Conta criada com sucesso! Faça login.')
+        if (data.requiresVerification) {
+          router.push(`/auth/verify-email?email=${encodeURIComponent(formData.email)}`)
+        } else {
+          router.push('/auth/signin?message=Conta criada com sucesso! Faça login.')
+        }
       } else {
         setError(data.error || 'Erro ao criar conta')
       }

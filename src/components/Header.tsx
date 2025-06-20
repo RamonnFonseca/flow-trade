@@ -32,9 +32,19 @@ const Header = async () => {
                     className="w-8 h-8 rounded-full"
                   />
                 )}
-                <span className="text-sm">
-                  Olá, {session.user.name?.split(' ')[0]}
-                </span>
+                <div className="flex flex-col">
+                  <span className="text-sm">
+                    Olá, {session.user.name?.split(' ')[0]}
+                  </span>
+                  {!session.user.emailVerified && (
+                    <Link
+                      href={`/auth/verify-email?email=${encodeURIComponent(session.user.email || '')}`}
+                      className="text-xs text-yellow-300 hover:text-yellow-100"
+                    >
+                      ⚠️ Verificar email
+                    </Link>
+                  )}
+                </div>
               </div>
               <form
                 action={async () => {

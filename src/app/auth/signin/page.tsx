@@ -29,7 +29,11 @@ export default function SignIn() {
       })
 
       if (result?.error) {
-        setError('Email ou senha incorretos')
+        if (result.error === 'EMAIL_NOT_VERIFIED') {
+          router.push(`/auth/verify-email?email=${encodeURIComponent(formData.email)}`)
+        } else {
+          setError('Email ou senha incorretos')
+        }
       } else {
         router.push('/')
         router.refresh()

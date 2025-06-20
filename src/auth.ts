@@ -42,11 +42,17 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           return null
         }
 
+        // Verificar se o email foi verificado
+        if (!user.emailVerified) {
+          throw new Error("EMAIL_NOT_VERIFIED")
+        }
+
         return {
           id: user.id,
           email: user.email,
           name: user.name,
           image: user.image,
+          emailVerified: user.emailVerified,
         }
       }
     })
@@ -61,12 +67,14 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     async jwt({ token, user }) {
       if (user) {
         token.id = user.id
+        token.emailVerified = user.emailVerified
       }
       return token
     },
     async session({ session, token }) {
       if (token) {
         session.user.id = token.id as string
+        session.user.emailVerified = token.emailVerified as Date | null
       }
       return session
     },

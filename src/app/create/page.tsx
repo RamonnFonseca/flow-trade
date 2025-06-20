@@ -9,5 +9,10 @@ export default async function CreatePost() {
     redirect('/auth/signin');
   }
 
+  // Verificar se o email foi verificado
+  if (session.user.email && !session.user.emailVerified) {
+    redirect(`/auth/verify-email?email=${encodeURIComponent(session.user.email)}`);
+  }
+
   return <CreatePostForm />;
 } 
