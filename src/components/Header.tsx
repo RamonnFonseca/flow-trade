@@ -51,12 +51,20 @@ const Header = async () => {
               </form>
             </>
           ) : (
-            <Link
-              href="/auth/signin"
-              className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-sm"
-            >
-              Entrar
-            </Link>
+            <div className="flex items-center space-x-2">
+              <Link
+                href="/auth/register"
+                className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded text-sm"
+              >
+                Registrar
+              </Link>
+              <Link
+                href="/auth/signin"
+                className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-sm"
+              >
+                Entrar
+              </Link>
+            </div>
           )}
         </div>
       </div>
