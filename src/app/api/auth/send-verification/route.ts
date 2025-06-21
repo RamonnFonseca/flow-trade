@@ -78,7 +78,9 @@ export async function POST(request: NextRequest) {
     })
 
     // Log do código para desenvolvimento
-    console.log(`🔑 CÓDIGO DE VERIFICAÇÃO para ${email}: ${verificationCode}`)
+    if (process.env.NODE_ENV === 'development') {
+      console.log(`🔑 CÓDIGO DE VERIFICAÇÃO para ${email}: ${verificationCode}`)
+    }
 
     // Enviar email (apenas se configurado)
     if (process.env.SMTP_USER && process.env.SMTP_PASS) {
@@ -111,7 +113,7 @@ export async function POST(request: NextRequest) {
           </div>
         `,
       })
-    } else {
+    } else if (process.env.NODE_ENV === 'development') {
       console.log(`📧 SMTP não configurado. Código: ${verificationCode}`)
     }
 
